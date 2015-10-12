@@ -41,7 +41,7 @@ module TweetStream
     def initialize(name = DEFAULT_NAME, options = DEFAULT_OPTIONS)
       @app_name = name
       @daemon_options = options
-      super({})
+      super(options[:client_options] || {})
     end
 
     def start(path, query_parameters = {}, &block) #:nodoc:
